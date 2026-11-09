@@ -58,7 +58,7 @@ export default function Studio() {
 
             <div
               data-reveal
-              className="mt-14 grid grid-cols-3 gap-6 border-t border-charcoal/15 pt-8"
+              className="mt-14 grid grid-cols-3 gap-4 border-t border-charcoal/15 pt-8 md:gap-6"
             >
               <Stat value="13" label="Years of practice" />
               <Stat value="120+" label="Projects delivered" />

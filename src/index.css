@@ -7,11 +7,19 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  html,
+  body {
+    overflow-x: clip;
   }
 
   body {
     @apply bg-ivory font-sans text-charcoal;
     font-weight: 400;
+    -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {

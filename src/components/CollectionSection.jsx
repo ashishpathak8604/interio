@@ -31,9 +31,9 @@ export default function CollectionSection({ index, title, image, to, alt, scene,
           <h2 className="mt-6 font-display text-[clamp(2.9rem,8.5vw,8.5rem)] font-bold leading-[0.95] tracking-[-0.015em]">
             {title}
           </h2>
-          <span className="mt-10 inline-flex translate-y-2 items-center gap-4 text-[10px] font-medium uppercase tracking-[0.38em] opacity-0 transition-all duration-700 ease-luxurious group-hover:translate-y-0 group-hover:opacity-80 md:mt-12">
+          <span className="mt-10 inline-flex items-center gap-4 text-[10px] font-medium uppercase tracking-[0.38em] opacity-80 transition-all duration-700 ease-luxurious md:mt-12 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-80">
             Explore
-            <span className="block h-px w-8 bg-current transition-all duration-700 ease-luxurious group-hover:w-14" />
+            <span className="block h-px w-8 bg-current transition-all duration-700 ease-luxurious md:group-hover:w-14" />
           </span>
         </div>
       </Link>

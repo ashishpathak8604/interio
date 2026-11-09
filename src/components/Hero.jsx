@@ -24,7 +24,7 @@ export default function Hero({ className = '' }) {
       >
         <h1
           aria-label="Spaces That Tell Your Story."
-          className="font-display text-[clamp(2.2rem,8.5vw,9rem)] font-bold leading-[0.96] tracking-[-0.02em]"
+          className="font-display text-[clamp(1.9rem,8.5vw,9rem)] font-bold leading-[0.96] tracking-[-0.02em]"
         >
           <span className="block overflow-hidden pb-[0.06em]">
             <span data-hero-line className="block whitespace-nowrap">Spaces That Tell</span>

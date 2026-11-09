@@ -99,53 +99,55 @@ export default function Navbar() {
 
       <div
         aria-hidden={!open}
-        className={`fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-ivory text-charcoal transition-[opacity,visibility] duration-700 ease-luxurious ${
+        className={`fixed inset-0 z-[70] overflow-y-auto bg-ivory text-charcoal transition-[opacity,visibility] duration-700 ease-luxurious ${
           open ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
-        <div className="flex h-20 items-center justify-between px-6 md:h-24 md:px-10">
-          <Link
-            to="/"
-            onClick={(event) => handleNavigate(event, '/')}
-            className="font-display text-[22px] font-semibold lowercase leading-none tracking-[0.14em]"
-          >
-            interio park
-          </Link>
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            aria-label="Close menu"
-            className="text-[10px] font-semibold uppercase tracking-[0.3em]"
-          >
-            Close
-          </button>
-        </div>
+        <div className="flex min-h-full flex-col">
+          <div className="flex h-20 shrink-0 items-center justify-between px-6 md:h-24 md:px-10">
+            <Link
+              to="/"
+              onClick={(event) => handleNavigate(event, '/')}
+              className="font-display text-[22px] font-semibold lowercase leading-none tracking-[0.14em]"
+            >
+              interio park
+            </Link>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close menu"
+              className="text-[10px] font-semibold uppercase tracking-[0.3em]"
+            >
+              Close
+            </button>
+          </div>
 
-        <nav className="flex flex-1 flex-col justify-center px-6 md:px-10">
-          {NAV_LINKS.map((link, i) => (
-            <div key={link.label} className="overflow-hidden border-b border-charcoal/10">
-              <Link
-                to={link.to}
-                aria-label={link.label}
-                onClick={(event) => handleNavigate(event, link.to)}
-                className={`flex items-baseline gap-5 py-3 font-display text-[9vw] font-semibold leading-none tracking-[-0.02em] transition-transform duration-700 ease-luxurious sm:text-5xl md:py-4 md:text-6xl ${
-                  open ? 'translate-y-0' : 'translate-y-full'
-                }`}
-                style={{ transitionDelay: open ? `${140 + i * 60}ms` : '0ms' }}
-              >
-                <span className="font-sans text-[10px] tracking-[0.2em] opacity-40">0{i + 1}</span>
-                {link.label}
-              </Link>
+          <nav className="flex flex-1 flex-col justify-center px-6 py-6 md:px-10">
+            {NAV_LINKS.map((link, i) => (
+              <div key={link.label} className="overflow-hidden border-b border-charcoal/10">
+                <Link
+                  to={link.to}
+                  aria-label={link.label}
+                  onClick={(event) => handleNavigate(event, link.to)}
+                  className={`flex items-baseline gap-5 py-3 font-display text-[9vw] font-semibold leading-none tracking-[-0.02em] transition-transform duration-700 ease-luxurious sm:text-5xl md:py-4 md:text-6xl ${
+                    open ? 'translate-y-0' : 'translate-y-full'
+                  }`}
+                  style={{ transitionDelay: open ? `${140 + i * 60}ms` : '0ms' }}
+                >
+                  <span className="font-sans text-[10px] tracking-[0.2em] opacity-40">0{i + 1}</span>
+                  {link.label}
+                </Link>
+              </div>
+            ))}
+          </nav>
+
+          <div className="shrink-0 px-6 pb-10 md:px-10">
+            <div className="flex flex-col gap-4 border-t border-charcoal/10 pt-6 text-[10px] font-medium uppercase tracking-[0.26em] text-charcoal/50 sm:flex-row sm:items-center sm:justify-between">
+              <a href="mailto:hello@interiopark.com" className="link-line w-fit">
+                hello@interiopark.com
+              </a>
+              <span>Bengaluru, India</span>
             </div>
-          ))}
-        </nav>
-
-        <div className="px-6 pb-10 md:px-10">
-          <div className="flex flex-col gap-4 border-t border-charcoal/10 pt-6 text-[10px] font-medium uppercase tracking-[0.26em] text-charcoal/50 sm:flex-row sm:items-center sm:justify-between">
-            <a href="mailto:hello@interiopark.com" className="link-line w-fit">
-              hello@interiopark.com
-            </a>
-            <span>Bengaluru, India</span>
           </div>
         </div>
       </div>
