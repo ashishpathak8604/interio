@@ -27,20 +27,13 @@
     font-style: italic;
   }
 
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
   ::-webkit-scrollbar {
-    width: 9px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f5f1ea;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #c9bfae;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #a89b85;
+    display: none;
   }
 }
 
