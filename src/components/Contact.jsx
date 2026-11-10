@@ -1,4 +1,5 @@
 import { images } from '../data/images'
+import ResponsiveImage from './ResponsiveImage'
 
 export default function Contact() {
   return (
@@ -68,8 +69,9 @@ export default function Contact() {
 
         <div className="relative min-h-[60vh] overflow-hidden lg:min-h-full">
           <div data-parallax className="absolute inset-x-0 -top-[8%] h-[116%] will-change-transform">
-            <img
-              src={images.contact}
+            <ResponsiveImage
+              image={images.contact}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="A calm interior detail welcoming new projects"
               loading="lazy"
               className="h-full w-full object-cover object-center"

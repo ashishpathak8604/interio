@@ -1,4 +1,5 @@
 import { images } from '../data/images'
+import ResponsiveImage from './ResponsiveImage'
 
 const principles = [
   {
@@ -49,9 +50,10 @@ export default function Philosophy() {
           className="relative mt-16 aspect-[16/10] w-full overflow-hidden bg-beige md:mt-24 md:aspect-[21/9]"
         >
           <div data-parallax className="absolute inset-x-0 -top-[8%] h-[116%] will-change-transform">
-            <img
+            <ResponsiveImage
               data-img-reveal
-              src={images.philosophy}
+              image={images.philosophy}
+              sizes="100vw"
               alt="Architectural detail and natural materials in a quiet interior"
               loading="lazy"
               className="h-full w-full object-cover object-center"

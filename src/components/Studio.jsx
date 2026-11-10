@@ -1,4 +1,5 @@
 import { images } from '../data/images'
+import ResponsiveImage from './ResponsiveImage'
 
 function Stat({ value, label }) {
   return (
@@ -19,9 +20,10 @@ export default function Studio() {
           <div className="lg:col-span-6 lg:pr-16 xl:pr-24">
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-beige">
               <div data-parallax className="absolute inset-x-0 -top-[8%] h-[116%] will-change-transform">
-                <img
+                <ResponsiveImage
                   data-img-reveal
-                  src={images.studio}
+                  image={images.studio}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   alt="A considered living space by Interio Park"
                   loading="lazy"
                   className="h-full w-full object-cover object-center"

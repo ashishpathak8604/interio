@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ResponsiveImage from './ResponsiveImage'
 
 export default function CollectionSection({ index, title, image, to, alt, scene, className = '' }) {
   return (
@@ -8,13 +9,14 @@ export default function CollectionSection({ index, title, image, to, alt, scene,
     >
       <Link
         to={to}
-        aria-label={`Explore the ${title}`}
+        aria-label={`Click to explore the ${title}`}
         className="relative block h-full w-full"
       >
         <div data-scene-media className="absolute inset-0 overflow-hidden">
-          <img
-            src={image}
+          <ResponsiveImage
+            image={image}
             alt={alt}
+            sizes="100vw"
             loading="lazy"
             className="h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-luxurious group-hover:scale-[1.04]"
           />
@@ -32,7 +34,7 @@ export default function CollectionSection({ index, title, image, to, alt, scene,
             {title}
           </h2>
           <span className="mt-10 inline-flex items-center gap-4 text-[10px] font-medium uppercase tracking-[0.38em] opacity-80 transition-all duration-700 ease-luxurious md:mt-12 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-80">
-            Explore
+            Click to Explore
             <span className="block h-px w-8 bg-current transition-all duration-700 ease-luxurious md:group-hover:w-14" />
           </span>
         </div>

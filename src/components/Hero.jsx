@@ -1,4 +1,5 @@
 import { images } from '../data/images'
+import ResponsiveImage from './ResponsiveImage'
 
 export default function Hero({ className = '' }) {
   return (
@@ -8,11 +9,12 @@ export default function Hero({ className = '' }) {
       className={`h-[100svh] w-full overflow-hidden bg-ink text-ivory ${className}`}
     >
       <div data-scene-media className="absolute inset-0 overflow-hidden will-change-transform">
-        <img
+        <ResponsiveImage
           data-hero-img
-          src={images.hero}
+          image={images.hero}
+          sizes="100vw"
           alt="A serene, light-filled interior designed by Interio Park"
-          fetchpriority="high"
+          priority
           className="absolute inset-0 h-full w-full object-cover object-center will-change-transform"
         />
         <div className="absolute inset-0 bg-ink/35" />

@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ResponsiveImage from '../components/ResponsiveImage'
 import { collections } from '../data/collections'
 
 export default function CollectionPage({ variant = 'dream' }) {
@@ -11,10 +12,11 @@ export default function CollectionPage({ variant = 'dream' }) {
 
       <main>
         <section className="relative h-[100svh] w-full overflow-hidden bg-ink">
-          <img
-            src={page.hero}
+          <ResponsiveImage
+            image={page.hero}
+            sizes="100vw"
             alt={page.heroAlt}
-            fetchpriority="high"
+            priority
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-ink/40" />
@@ -29,13 +31,14 @@ export default function CollectionPage({ variant = 'dream' }) {
         <section className="relative bg-ink px-6 pb-24 pt-24 md:px-10 md:pb-32 md:pt-32 lg:px-16 lg:pb-40 lg:pt-40">
           <div className="mx-auto w-full max-w-[1700px]">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-16">
-              {page.gallery.map((item, index) => (
-                <figure key={item.src} className={item.layout}>
+              {page.gallery.map((item) => (
+                <figure key={item.alt} className={item.layout}>
                   <div className={`relative w-full overflow-hidden bg-charcoal ${item.aspect}`}>
-                    <img
-                      src={item.src}
+                    <ResponsiveImage
+                      image={item.src}
                       alt={item.alt}
-                      loading={index < 2 ? 'eager' : 'lazy'}
+                      sizes="(min-width: 1024px) 66vw, (min-width: 768px) 50vw, 100vw"
+                      loading="lazy"
                       className="h-full w-full object-cover object-center"
                     />
                   </div>
